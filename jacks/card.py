@@ -1,8 +1,8 @@
 class Card:
     """"""
 
-    PRETTY_SUIT = {'d' : '\u2666', 'h' : '\u2665',
-                   's' : '\u2660', 'c' : '\u2663'}
+    PRETTY_SUIT = {'d' : u'\u2666', 'h' : u'\u2665',
+                   's' : u'\u2660', 'c' : u'\u2663'}
     SUIT_COLOR = {'d' : '\033[94m%s\033[0m', 'h' : '\033[91m%s\033[0m',
                   's' : '%s', 'c' : '\033[92m%s\033[0m'}
 
@@ -36,4 +36,4 @@ class Card:
         card = self.rank + Card.PRETTY_SUIT[self.suit]
         if self.color:
             card = Card.SUIT_COLOR[self.suit] % card
-        return card
+        return card.encode('utf-8')
