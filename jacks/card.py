@@ -1,3 +1,6 @@
+import six
+
+@six.python_2_unicode_compatible
 class Card:
     """"""
 
@@ -36,4 +39,4 @@ class Card:
         card = self.rank + Card.PRETTY_SUIT[self.suit]
         if self.color:
             card = Card.SUIT_COLOR[self.suit] % card
-        return card.encode('utf-8')
+        return card
