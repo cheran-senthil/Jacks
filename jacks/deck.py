@@ -3,14 +3,16 @@ from .card import Card
 import random
 
 class Deck:
-    def __init__(self, shuffle=True, color=True):
-        self.reset(shuffle)
+    def __init__(self, shuffle=False, color=True):
         self.color = color
+        self.reset(shuffle)
 
     def shuffle(self):
         random.shuffle(self.deck)
 
     def draw(self, n=1):
+        if(n > len(self.deck)):
+            n = len(self.deck)
         cards = self.deck[:n]
         self.deck = self.deck[n:]
         return cards
