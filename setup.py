@@ -16,4 +16,5 @@ setup(name='Jacks',
       packages=['jacks'],
       install_requires=[
           'six',
+          'termcolor',
       ])
