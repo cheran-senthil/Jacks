@@ -16,8 +16,8 @@ class Deck:
 
     def reset(self, shuffle=False):
         self.deck = []
-        for suit in ['s', 'h', 'd', 'c']:
-            for rank in Card.STR_RANKS:
+        for suit in 'shdc':
+            for rank in 'A23456789TJQK':
                 self.deck.append(Card(rank+suit))
         if shuffle:
             self.shuffle()
