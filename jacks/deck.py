@@ -3,8 +3,9 @@ from .card import Card
 import random
 
 class Deck:
-    def __init__(self, shuffle=True):
+    def __init__(self, shuffle=True, color=True):
         self.reset(shuffle)
+        self.color = color
 
     def shuffle(self):
         random.shuffle(self.deck)
@@ -18,7 +19,7 @@ class Deck:
         self.deck = []
         for suit in 'shdc':
             for rank in 'A23456789TJQK':
-                self.deck.append(Card(rank+suit))
+                self.deck.append(Card(rank+suit, color=self.color))
         if shuffle:
             self.shuffle()
 
