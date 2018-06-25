@@ -15,16 +15,16 @@ class Card:
     def __init__(self, card, color=True):
         """Create a new Card"""
         if len(card) != 2:
-            raise ValueError('Invalid Card %s Expected only 2 chars' % card)
+            raise ValueError('Invalid Card "%s" Expected only 2 chars' % card)
 
         self.rank = card[0].upper()
         self.suit = card[1].lower()
         self.color = color
 
-        if card[0] not in '23456789TJQKA':
-            raise ValueError('Invalid Rank %s Expected from 23456789TJQKA' % card[0])
-        if card[1] not in 'shdc':
-            raise ValueError('Invalid Suit %s Expected s, h, d or c' % card[1])
+        if self.rank not in list('23456789TJQKA'):
+            raise ValueError('Invalid Rank "%s" Expected from 23456789TJQKA' % self.rank)
+        if self.suit not in list('shdc'):
+            raise ValueError('Invalid Suit "%s" Expected s, h, d or c' % self.suit)
 
     def __repr__(self):
         return self.__str__()
