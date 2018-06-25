@@ -8,6 +8,7 @@ with resource_stream(resource_package, 'hand_rankings.txt') as f:
     flush_lookup = dict(data[0:10] + data[322:1599])
 
 class evaluator:
+    @staticmethod
     def hand_rank(hand):
         ranks = ''
         suits = set()
@@ -19,6 +20,7 @@ class evaluator:
             return flush_lookup[ranks]
         return hand_lookup[ranks]
 
+    @staticmethod
     def best_five(hand):
         max_rank = 7463
         best_hand = []
@@ -28,6 +30,7 @@ class evaluator:
                 best_hand = poker_hand
         return best_hand
 
+    @staticmethod
     def evaluator(*hands):
         max_rank = 7463
         best_hand = []
