@@ -23,7 +23,6 @@ class evaluator:
     @staticmethod
     def best_five(hand):
         max_rank = 7463
-        best_hand = []
         for poker_hand in combinations(hand, 5):
             if evaluator.hand_rank(poker_hand) < max_rank:
                 max_rank = evaluator.hand_rank(poker_hand)
@@ -33,13 +32,14 @@ class evaluator:
     @staticmethod
     def evaluator(*hands):
         max_rank = 7463
-        best_hand = []
-        winning_player = 0
         for player, hand in enumerate(hands):
             hand = evaluator.best_five(hand)
             rank = evaluator.hand_rank(hand)
             if rank < max_rank:
                 max_rank = rank
-                best_hand = hand
-                winning_player = player
+                best_hand = [hand]
+                winning_player = [player]
+            elif rank == max_rank:
+                best_hand.append(hand)
+                winning_player.append(player)
         return best_hand, winning_player
