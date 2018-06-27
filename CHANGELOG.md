@@ -1,5 +1,5 @@
 - 0.1.1
+  - Handle equal hands
   - Fix issue #1
-
 - 0.1.0
   - Initial Release
