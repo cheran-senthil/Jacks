@@ -1,5 +1,11 @@
 # Jacks
-Basic Commands for Poker
+A python library for fast poker hand evaluation.
+
+## Installation
+
+```
+$ pip install Jacks
+```
 
 ## Changelog
 
