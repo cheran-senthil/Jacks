@@ -9,6 +9,7 @@ def readme():
 setup(name='Jacks',
       version='0.1.1',
       description='Basic Commands for Poker',
+      long_description_content_type='text/markdown',
       long_description=readme(),
       url='https://github.com/Cheran-Senthil/Jacks',
       author='Cheran and Mukundan',
