@@ -13,4 +13,4 @@ Available at [CHANGELOG.md](CHANGELOG.md)
 
 ## License
 
-[Apache License 2.0](LICENSE)
+[MIT](LICENSE)
