@@ -13,7 +13,7 @@ setup(name='Jacks',
       long_description=readme(),
       url='https://github.com/Cheran-Senthil/Jacks',
       author='Cheran and Mukundan',
-      license='Apache License 2.0',
+      license='MIT',
       packages=['jacks'],
       install_requires=[
           'six',
