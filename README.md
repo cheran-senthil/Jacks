@@ -1,6 +1,6 @@
 # Jacks
 
-A python library for fast poker hand evaluation, a Node.js version of this is available [here](https://github.com/Cheran-Senthil/Jacks.js).
+A python library for fast poker hand evaluation, a Node.js implementation of this is available [here](https://github.com/Cheran-Senthil/Jacks.js).
 
 ## Installation
 
