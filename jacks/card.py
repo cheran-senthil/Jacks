@@ -1,3 +1,4 @@
+""""""
 import six
 from termcolor import colored
 
@@ -13,7 +14,6 @@ class Card:
                   'c' : lambda x: colored(x, 'green')}
 
     def __init__(self, card, color=True):
-        """Create a new Card"""
         if len(card) != 2:
             raise ValueError('Invalid Card "%s" Expected only 2 chars' % card)
 

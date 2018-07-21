@@ -1,23 +1,28 @@
+"""Deck class"""
+import random
 from .card import Card
 
-import random
-
 class Deck:
+    """Class to store a Deck"""
     def __init__(self, shuffle=False, color=True):
         self.color = color
+        self.deck = []
         self.reset(shuffle)
 
     def shuffle(self):
+        """Shuffle the Deck"""
         random.shuffle(self.deck)
 
-    def draw(self, n=1):
-        if(n > len(self.deck)):
-            n = len(self.deck)
-        cards = self.deck[:n]
-        self.deck = self.deck[n:]
+    def draw(self, i=1):
+        """Draw from the Deck"""
+        if i > len(self.deck):
+            i = len(self.deck)
+        cards = self.deck[:i]
+        self.deck = self.deck[i:]
         return cards
 
     def reset(self, shuffle=False):
+        """Reset the Deck"""
         self.deck = []
         for suit in 'shdc':
             for rank in 'A23456789TJQK':

@@ -1,3 +1,4 @@
+"""Initialization file"""
 from .card import Card
 from .deck import Deck
-from .evaluator import evaluator
+from .evaluator import Evaluator
