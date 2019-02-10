@@ -2,16 +2,23 @@
 import six
 from termcolor import colored
 
+
 @six.python_2_unicode_compatible
 class Card:
     """"""
 
-    PRETTY_SUIT = {'d' : u'\u2666', 'h' : u'\u2665',
-                   's' : u'\u2660', 'c' : u'\u2663'}
-    SUIT_COLOR = {'d' :  lambda x: colored(x, 'blue'),
-                  'h' :  lambda x: colored(x, 'red'),
-                  's' : lambda x: x,
-                  'c' : lambda x: colored(x, 'green')}
+    PRETTY_SUIT = {
+        'd': u'\u2666',
+        'h': u'\u2665',
+        's': u'\u2660',
+        'c': u'\u2663'
+    }
+    SUIT_COLOR = {
+        'd': lambda x: colored(x, 'blue'),
+        'h': lambda x: colored(x, 'red'),
+        's': lambda x: x,
+        'c': lambda x: colored(x, 'green')
+    }
 
     def __init__(self, card, color=True):
         if len(card) != 2:
@@ -22,9 +29,11 @@ class Card:
         self.color = color
 
         if self.rank not in list('23456789TJQKA'):
-            raise ValueError('Invalid Rank "%s" Expected from 23456789TJQKA' % self.rank)
+            raise ValueError(
+                'Invalid Rank "%s" Expected from 23456789TJQKA' % self.rank)
         if self.suit not in list('shdc'):
-            raise ValueError('Invalid Suit "%s" Expected s, h, d or c' % self.suit)
+            raise ValueError(
+                'Invalid Suit "%s" Expected s, h, d or c' % self.suit)
 
     def __repr__(self):
         return self.__str__()

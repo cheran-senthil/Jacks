@@ -1,14 +1,17 @@
 """Evaluator class"""
 from itertools import combinations
+
 from pkg_resources import resource_stream
 
 with resource_stream(__name__, 'hand_rankings.txt') as f:
-    DATA = [(line[:-1], i+1) for i, line in enumerate(list(f))]
+    DATA = [(line[:-1], i + 1) for i, line in enumerate(list(f))]
     HAND_LOOKUP = dict(DATA[10:322] + DATA[1599:])
     FLUSH_LOOKUP = dict(DATA[0:10] + DATA[322:1599])
 
+
 class Evaluator:
     """Evaluator class to evaluate poker hand ranks"""
+
     @staticmethod
     def hand_rank(hand):
         """returns hand rank for a given hand"""
